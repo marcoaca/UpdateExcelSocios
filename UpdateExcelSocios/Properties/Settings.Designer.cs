@@ -31,5 +31,16 @@ namespace UpdateExcelSocios.Properties {
                 return ((string)(this["fileName"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARCO-PC\\MSSQLSERVER12;Initial Catalog=AssociGestorDb;Integrated Secu" +
+            "rity=True")]
+        public string AssociGestorDbConnectionString {
+            get {
+                return ((string)(this["AssociGestorDbConnectionString"]));
+            }
+        }
     }
 }
