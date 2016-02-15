@@ -25,7 +25,7 @@ namespace UpdateExcelSocios.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("lista_socios.xls")]
+        [global::System.Configuration.DefaultSettingValueAttribute("listagemsocios..xlsx")]
         public string fileName {
             get {
                 return ((string)(this["fileName"]));
