@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop;
 using Excel = Microsoft.Office.Interop.Excel;
+using Microsoft.SqlServer.Server;
+using Microsoft.SqlServer.Management.Smo;
 
 namespace UpdateExcelSocios
 {
@@ -32,8 +34,9 @@ namespace UpdateExcelSocios
             // TODO: This line of code loads data into the 'dataSet.Socios' table. You can move, or remove it, as needed.
             this.sociosTableAdapter.Fill(this.dataSet.Socios);
             String excelFilepath = Application.StartupPath + @"\" + excelFilename;
-            
-
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = true;
+            excelApp.Workbooks.Open(excelFilepath);
         }
 
         private void sociosBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -41,6 +44,24 @@ namespace UpdateExcelSocios
             this.Validate();
             this.sociosBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.dataSet);
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Server srv = new Server(@"MARCO-PC\MSSQLSERVER12");
+            Console.WriteLine(srv.Information.Version);
+            Database db = srv.Databases["AssociGestorDb"];
+            Backup bk = new Backup();
+            bk.Action = BackupActionType.Database;
+            bk.BackupSetDescription = "Full backup of AssociGestorDb";
+            bk.BackupSetName = "AssociGestorDb Backup";
+            bk.Database = "AssociGestorDb";
+            BackupDeviceItem bdi = new BackupDeviceItem(@"c:\temp\AssociGestorDb" + DateTime.Now.ToString("_yyyyMMdd"), DeviceType.File);
+            bk.Devices.Add(bdi);
+            bk.Incremental = false;
+            bk.LogTruncation = BackupTruncateLogType.Truncate;
+            bk.SqlBackup(srv);
 
         }
     }

@@ -56,12 +56,22 @@
             this.anosListBox = new System.Windows.Forms.ListBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.button1 = new System.Windows.Forms.Button();
             anosLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sociosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // anosLabel
+            // 
+            anosLabel.AutoSize = true;
+            anosLabel.Location = new System.Drawing.Point(509, 9);
+            anosLabel.Name = "anosLabel";
+            anosLabel.Size = new System.Drawing.Size(29, 13);
+            anosLabel.TabIndex = 2;
+            anosLabel.Text = "Ano:";
             // 
             // dataGridView1
             // 
@@ -235,15 +245,6 @@
             this.tableAdapterManager.SociosTableAdapter = this.sociosTableAdapter;
             this.tableAdapterManager.UpdateOrder = UpdateExcelSocios.DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // anosLabel
-            // 
-            anosLabel.AutoSize = true;
-            anosLabel.Location = new System.Drawing.Point(509, 9);
-            anosLabel.Name = "anosLabel";
-            anosLabel.Size = new System.Drawing.Size(29, 13);
-            anosLabel.TabIndex = 2;
-            anosLabel.Text = "Ano:";
-            // 
             // anosListBox
             // 
             this.anosListBox.DataSource = this.anosBindingSource;
@@ -271,11 +272,22 @@
             this.listBox2.Size = new System.Drawing.Size(58, 95);
             this.listBox2.TabIndex = 4;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(30, 41);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 518);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(anosLabel);
@@ -320,6 +332,7 @@
         private System.Windows.Forms.ListBox anosListBox;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
