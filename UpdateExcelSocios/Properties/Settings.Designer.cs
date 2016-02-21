@@ -25,7 +25,7 @@ namespace UpdateExcelSocios.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("listagemsocios..xlsx")]
+        [global::System.Configuration.DefaultSettingValueAttribute("listagemsocios.xls")]
         public string fileName {
             get {
                 return ((string)(this["fileName"]));
@@ -35,8 +35,7 @@ namespace UpdateExcelSocios.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=MARCO-PC\\MSSQLSERVER12;Initial Catalog=AssociGestorDb;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=AssociGestorDb;Integrated Security=True")]
         public string AssociGestorDbConnectionString {
             get {
                 return ((string)(this["AssociGestorDbConnectionString"]));
